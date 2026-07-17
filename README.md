@@ -132,15 +132,3 @@ A reference deployment lives on AIA Testnet — see the address in
 5. **Vote** — during the window, each member casts one vote.
 6. **Results** — watch live standings, then the steward closes the election to lock the final, verifiable result.
 
-## Roadmap
-
-- Weighted / token-based voting power
-- Ranked-choice and multi-seat elections
-- Merkle-allowlist membership (no shared key)
-- Gasless voting via meta-transactions
-- Election templates and recurring governance cycles
-- Multi-chain deployments and an indexer/subgraph
-
-## License
-
-MIT
