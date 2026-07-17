@@ -4,7 +4,7 @@
 
 ### Governance, decided together
 
-**Polis** is a decentralized governance platform for DAOs, councils and communities. Open an election, approve nominees, and let members cast verifiable, tamper-proof votes — every step settled on-chain and open to audit.
+**Polis** is a decentralized governance platform for DAOs, councils and communities. Open an election, approve nominees, and let members cast verifiable, tamper-proof votes - every step settled on-chain and open to audit.
 
 Built on the **AIA blockchain**.
 
