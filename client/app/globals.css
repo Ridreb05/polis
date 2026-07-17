@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Typography */
+    --font-inter: "Inter", system-ui, -apple-system, sans-serif;
+    --font-space-grotesk: "Space Grotesk", "Inter", system-ui, sans-serif;
+
+    /* Polis dark theme (default) */
+    --background: 250 40% 4%;
+    --foreground: 240 20% 96%;
+
+    --card: 249 34% 8%;
+    --card-foreground: 240 20% 96%;
+
+    --popover: 249 34% 7%;
+    --popover-foreground: 240 20% 96%;
+
+    --primary: 248 90% 66%;
+    --primary-foreground: 240 20% 98%;
+
+    --secondary: 249 24% 14%;
+    --secondary-foreground: 240 20% 96%;
+
+    --muted: 249 20% 13%;
+    --muted-foreground: 244 12% 62%;
+
+    --accent: 270 78% 66%;
+    --accent-foreground: 240 20% 98%;
+
+    --destructive: 356 78% 62%;
+    --destructive-foreground: 240 20% 98%;
+
+    --success: 152 62% 47%;
+    --success-foreground: 152 40% 10%;
+
+    --border: 250 24% 16%;
+    --input: 250 24% 16%;
+    --ring: 248 90% 66%;
+
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image:
+      radial-gradient(60rem 40rem at 12% -10%, hsl(248 90% 66% / 0.16), transparent 60%),
+      radial-gradient(50rem 40rem at 100% 0%, hsl(270 78% 66% / 0.14), transparent 55%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(248 90% 66% / 0.35);
+  }
+
+  /* Slim, on-brand scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(250 24% 22%);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(248 40% 40%);
+    background-clip: content-box;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(120deg, #c8c4ff 0%, #a855f7 55%, #ec4899 100%);
+  }
+
+  /* Glassy surface used across cards, nav, panels */
+  .surface {
+    @apply rounded-2xl border border-white/[0.06] bg-card/70 backdrop-blur-xl;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.04) inset,
+      0 24px 60px -40px rgba(0, 0, 0, 0.9);
+  }
+
+  .surface-hover {
+    @apply transition-all duration-300 hover:border-primary/40 hover:-translate-y-0.5;
+  }
+  .surface-hover:hover {
+    box-shadow: 0 0 0 1px hsl(var(--primary) / 0.25),
+      0 30px 70px -35px hsl(var(--primary) / 0.5);
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-input bg-ink-800/70 px-4 py-3 text-sm text-foreground
+      placeholder:text-muted-foreground/70 transition-colors
+      focus:border-primary/60 focus:outline-none focus:ring-2 focus:ring-primary/25;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-muted-foreground;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03]
+      px-3 py-1 text-xs font-medium text-muted-foreground;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-xl bg-ink-800;
+  }
+  .skeleton::after {
+    @apply absolute inset-0 -translate-x-full animate-shimmer;
+    content: "";
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.06),
+      transparent
+    );
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grid {
+    background-size: 42px 42px;
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+}
