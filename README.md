@@ -14,7 +14,7 @@ Built on the **AIA blockchain**.
 
 ## Overview
 
-Traditional org voting relies on trust in whoever counts the ballots. Polis removes that trust assumption. A **steward** opens an election with a shared access key and a voting window. Community members **nominate** themselves for the ballot and are **approved** by the steward. Approved **members** then cast a single, one-wallet-one-vote ballot during the window. When the steward closes the election, the result is computed on-chain and independently verifiable by anyone.
+Traditional organized  voting relies on trust in whoever counts the ballots. Polis removes that trust assumption. A **steward** opens an election with a shared access key and a voting window. Community members **nominate** themselves for the ballot and are **approved** by the steward. Approved **members** then cast a single, one-wallet-one-vote ballot during the window. When the steward closes the election, the result is computed on-chain and independently verifiable by anyone.
 
 Polis is a fit for DAO council seats, cooperative board elections, nonprofit governance, guild leadership, working-group representatives — any group that needs to decide together, transparently.
 
